@@ -62,10 +62,10 @@ public class City : MonoBehaviour
 
     public void EndTurn()
     {
-        CalculateMoney();
+        CalculateFood();
         CalculatePopulation();
         CalculateJobs();
-        CalculateFood();
+        CalculateMoney();
 
         day++;
         UpdateStatsText();
@@ -73,10 +73,9 @@ public class City : MonoBehaviour
 
     private void CalculateFood()
     {
-        currentJob = 0;
         foreach (Building item in buildings)
         {
-            currentJob += item.buildingPreset_SO.food;
+            currentFood += item.buildingPreset_SO.food;
         }
     }
 
